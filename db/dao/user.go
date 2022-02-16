@@ -29,7 +29,8 @@ func AddUserRecord(username string, password string) error {
 
 // GetUserRecord 获取用户记录
 func GetUserRecord(username string, password string) ([]*model.UserRecord, error) {
-	md5Pwd := encrypt.GenerateMd5(password)
+	// md5Pwd := encrypt.GenerateMd5(password)
+	md5Pwd := password
 	log.Debugf("user[%s] pwd[%s]", username, md5Pwd)
 	var records []*model.UserRecord
 	cli := db.Get()
